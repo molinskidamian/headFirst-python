@@ -1,6 +1,10 @@
 from datetime import datetime
 from random import randint
-from time import sleep
+
+# Poniższe importy są ze sobą tożsame, różni je jedynie sposób odwołania się do metody w bibliotece time
+
+# from time import sleep // Wprzypadku takim możemy odwołać się bezpośrednio do metody sleep()
+import time # A przy imporcie bez wskazania konkretnej metody, w przypadku odwołania się do niej należyzastosować zapis time.sleep()
 
 odds = [
     1, 3, 5, 7, 9, 11, 13, 15, 17, 19,
@@ -14,8 +18,6 @@ seconds = datetime.today().second
 print('Aktulanie jest minuta: ' + str(rightNowMinutes))
 print("Aktualnie upłyneło sekund: " + str(seconds))
 
-
-
 index = 0
 total = 5
 
@@ -23,7 +25,7 @@ while index < total:
     sekNum = randint(0, 59)
     print('Losowa liczba z zakresu 0 - 59: ' + str(sekNum))
     print('Wstrzymanie funkcji na ' + str(sekNum) + ' sekund')
-    sleep(sekNum)
+    time.sleep(sekNum)
     if rightNowMinutes in odds:
         print('Minuta ' + str(rightNowMinutes) + ' NIE! jest parzysta')
     else:

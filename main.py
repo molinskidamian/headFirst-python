@@ -1,24 +1,27 @@
-vowels = ['a', 'e', 'i', 'o', 'u'] #vowels ang. samogłoski
-found = []
-words = []
+# Use list and methods
 
-word = 'none'
-index = 0
+names = [] # create empty list
+diffrentNames = ['Kate', 'Damian']
 
-while word != "stop":
-    print('Wprowadź słowo: ')
-    word = input()
-    if word != "stop":
-        words.append(word)
-        for letter in word:
-            if letter in vowels:
-                if letter in found:
-                    print("Litera --- " + letter + " --- jest już w naszym zbiorze, więc ją pomijam")
-                else:
-                    found.append(letter)
-        index += 1
+names.append('John')
+names.append(diffrentNames)
+names.append('Stanley')
 
-print('Wykonano ' + str(index) + ' sprawdzeń, a słowa, to:')
-print('Wypisz sprawdzane słowa:')
-for word in words:
-    print(word)
+
+print(names)
+
+print('Użycie metody names.pop()')
+last = names.pop()
+
+print(names)
+
+print('Ostatnia wartość tablicy, to: ' + last)
+
+
+
+
+
+print('==============.extend()===============')
+names.extend(['David', 'Gabrysia'])
+
+print(names)
